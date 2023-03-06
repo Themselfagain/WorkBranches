@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace StatisticArray
 {
@@ -18,7 +19,11 @@ namespace StatisticArray
             arr =OptionsManager.ReverseArr(arr);
             OptionsManager.PrintArr(arr);
             OptionsManager.SortArr(arr);
-            
+        }
+        public static void PrintOddsNum(int[] arr)
+        {
+            var result = arr.Where(x => x % 2 == 1).ToArray();
+            Console.WriteLine(string.Join(", ", result));
         }
     }
 }
