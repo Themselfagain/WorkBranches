@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace StatisticArray
 {
@@ -13,12 +14,17 @@ namespace StatisticArray
                 arr[i] = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine("count="+OptionsManager.CountLess100(arr));
+            Console.WriteLine("count=" + OptionsManager.CountLess100(arr));
             Console.WriteLine($"Max={OptionsManager.MaxNum(arr)}");
-            arr =OptionsManager.ReverseArr(arr);
+            arr = OptionsManager.ReverseArr(arr);
             OptionsManager.PrintArr(arr);
             OptionsManager.SortArr(arr);
-            
+
+        }
+        public static int CountOddNumbers(int[] arr)
+        {
+            return arr.Where(x => x % 2 == 1).Count();
+        
         }
     }
 }
